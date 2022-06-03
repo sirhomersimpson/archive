@@ -1,0 +1,11 @@
+logging:
+  level: INFO
+  loggers:
+    cloud.rik: DEBUG
+server:
+  type: simple
+  applicationContextPath: /application
+  adminContextPath: /admin
+  connector:
+    type: http
+    port: 9080

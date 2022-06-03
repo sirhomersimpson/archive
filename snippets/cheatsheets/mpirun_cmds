@@ -1,0 +1,15 @@
+# BM shapes T - series
+
+``
+/usr/mpi/gcc/openmpi-4.1.0rc5/bin/mpirun --mca btl tcp -x UCX_NET_DEVICES=mlx5_0:1 -x UCX_IB_GID_INDEX=3 -x HCOLL_ENABLE_MCAST_ALL=0 -x coll_hcoll_enable=0 -x UCX_IB_SL=0 -x NCCL_IB_SL=0 -x NCCL_IB_GID_INDEX=3 -x NCCL_ALGO=Ring -x NCCL_IB_HCA=mlx5_2,mlx5_3 --np $((2*2)) -N 2 --host hpc1:2,hpc2:2 -x NCCL_IB_QPS_PER_CONNECTION=8 -x UCX_TLS=ud,self,sm /opt/oci-hpc/nccl-tests/build/all_reduce_perf -b64 -e 1G -f2 -g1
+``
+
+# GPU Bx series
+``
+/usr/mpi/gcc/openmpi-4.1.0rc5/bin/mpirun --mca btl tcp -x NCCL_TOPO_FILE=/home/debian/topo-flattened-b4.xml -x UCX_NET_DEVICES=mlx5_0:1 -x HCOLL_ENABLE_MCAST_ALL=0 -x coll_hcoll_enable=0 -x NCCL_IB_SL=0 -x NCCL_IB_TC=41 -x NCCL_IB_QPS_PER_CONNECTION=2 -x NCCL_IB_GID_INDEX=3 -x NCCL_ALGO=Ring -x NCCL_IB_HCA=mlx5_2,mlx5_3,mlx5_4,mlx5_5,mlx5_6,mlx5_7,mlx5_8,mlx5_9,mlx5_10,mlx5_11,mlx5_12,mlx5_13,mlx5_16,mlx5_17,mlx5_18,mlx5_19 -x UCX_TLS=ud,self,sm -N 8 --host hpc1:8,hpc14:8,hpc28:8,hpc30:8,hpc12:8,hpc20:8,hpc5:8,hpc13:8,hpc2:8,hpc19:8,hpc16:8,hpc15:8,hpc7:8,hpc24:8,hpc8:8,hpc10:8,hpc22:8,hpc21:8,hpc31:8,hpc33:8,hpc27:8,hpc23:8,hpc3:8,hpc17:8,hpc25:8,hpc32:8,hpc4:8,hpc11:8,hpc6:8 --np $((29*8)) /home/debian/nccl-tests/build/all_reduce_perf -b1G -e 1G -f2 -g1 -n 200
+``
+
+# BM.GPU4.8
+``
+mpirun --mca pml ucx -x NCCL_IB_SL=0 -x NCCL_IB_TC=41 -x NCCL_IB_QPS_PER_CONNECTION=16 -x UCX_TLS=tcp -x NCCL_IGNORE_CPU_AFFINITY=1 -x UCX_NET_DEVICES=enp45s0f0 -x HCOLL_ENABLE_MCAST_ALL=0 -x coll_hcoll_enable=0 -x NCCL_IB_GID_INDEX=3 -x NCCL_ALGO=Ring -x NCCL_TOPO_FILE=/home/opc/topo-flattened.xml -x NCCL_IB_HCA="=mlx5_0,mlx5_2,mlx5_6,mlx5_8,mlx5_10,mlx5_12,mlx5_14,mlx5_16" --np 256 --hostfile /home/opc/32hosts -N 8 /home/opc/nccl-tests/build/all_reduce_perf -b 8 -e 1G -f 2 -n 1000
+``
