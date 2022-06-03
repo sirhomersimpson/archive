@@ -1,0 +1,7 @@
+[machines]
+localhost
+129.146.48.5
+
+[machines:vars]
+ansible_python_interpreter=/usr/bin/python3
+

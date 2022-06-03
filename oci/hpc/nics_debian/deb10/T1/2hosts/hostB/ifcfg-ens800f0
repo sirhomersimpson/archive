@@ -1,0 +1,3 @@
+iface ens800f0 inet static
+address 192.168.1.34
+netmask 255.255.255.248

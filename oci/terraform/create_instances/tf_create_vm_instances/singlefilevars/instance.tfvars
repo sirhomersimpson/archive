@@ -1,0 +1,8 @@
+compartment_ocid = "ocid1.compartment.oc1..aaaaaaaa2bv45q4vcdc6e4otblyllu4itrsblspvicblqanhwn6q2fhefibq"
+fingerprint="8f:0d:95:f2:f6:70:72:44:fa:29:b7:54:46:d9:d2:df"
+private_key_path="/home/opc/.oci/api.pem"
+region="us-phoenix-1"
+ssh_private_key="/home/opc/.ssh/ashburn"
+ssh_public_key="/home/opc/.ssh/ashburn.pub"
+tenancy_ocid="ocid1.tenancy.oc1..aaaaaaaax3q5jcmovrv7qxbops55wzrjeutinobtayaykdasoygtnpko7buq"
+user_ocid="ocid1.user.oc1..aaaaaaaahoobr2xmegsu2rxbzbmfgs2bjkj6kgvfqrxvyagelh6vvh54nqxa"
