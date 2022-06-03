@@ -1,0 +1,10 @@
+
+.DS_Store
+
+educativeio/.idea/
+
+*.iml
+
+educativeio/__pycache__/
+
+dailycodingproblem/.idea/
